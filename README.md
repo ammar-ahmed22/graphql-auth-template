@@ -64,7 +64,25 @@ npm run dev # yarn dev
 API is now live at `http://localhost:8080/graphql`!
 
 ## API Reference
-### Mutations (Unauthorized)
+## Types
+There are only two types of significance in this starter template; `User` and `AuthPayload`. `User` is self-explantory. `AuthPayload` is the JWT response sent with a number of mutations.
+```graphql
+type User {
+  _id: ID! # MongoDB ID
+  createdAt: Timestamp! # Custom scalar created by type-graphql for Date handling
+  firstName: String!
+  lastName: String!
+  middleName: String
+  username: String!
+}
+
+type AuthPayload {
+  token: String! # JWT
+}
+```
+## Unauthorized
+These mutations can be called without any authentication required.
+### Mutations
 #### Register
 Used to create a user in the database
 ```graphql
@@ -202,5 +220,94 @@ Responds with a boolean indicating success:
 }
 ```
 
-## Mutations (Authorized)
+## Authorized
+With all authorized queries and mutations, an `Authorization` header with the value of `Bearer <token>` must be set. 
+Otherwise, access will be denied.
+## Mutations 
+### Update Name
+Used to update your authenticated user's name in the database
+```graphql
+mutation UpdateName(
+  $firstName: String, 
+  $middleName: String
+  $lastName: String, 
+) {
+  updateName(
+    firstName: $firstName,
+    middleName: $middleName 
+    lastName: $lastName, 
+  ){
+    token
+  }
+}
+```
 
+Input your `firstName`, `lastName` and `middleName`. (all values are optional, any values not provided will remain the same):
+```json
+{
+  "firstName": "YOUR_FIRST_NAME",
+  "lastName": "YOUR_LAST_NAME",
+  "middleName": "YOUR_MIDDLE_NAME"
+}
+```
+
+Set your headers:
+```json
+{
+  "headers": {
+    "Authorization": "Bearer <JWT>"
+  }
+}
+```
+
+Responds with a JWT.
+```json
+{
+  "data": {
+    "updateName": {
+      "token": "<JWT>"
+    }
+  }
+}
+```
+
+## Queries
+### User
+Gets your authenticated user
+```graphql
+query User {
+  user{
+    username
+    firstName
+    lastName
+    middleName
+    _id
+    createdAt
+  }
+}
+```
+
+Set your headers:
+```json
+{
+  "headers": {
+    "Authorization": "Bearer <JWT>"
+  }
+}
+```
+
+Responds with user.
+```json
+{
+  "data": {
+    "user": {
+      "username": "YOUR_USERNAME",
+      "firstName": "YOUR_FIRST_NAME",
+      "lastName": "YOUR_LAST_NAME",
+      "middleName": "YOUR_MIDDLE_NAME",
+      "_id": "MONGO_DB_ID",
+      "createdAt": 0 /* Timestamp when user was created */
+    }
+  }
+}
+```
