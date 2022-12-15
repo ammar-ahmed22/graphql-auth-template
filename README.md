@@ -25,7 +25,7 @@ persisted in MongoDB.
 ## Tech Stack
 - Node.js (server environment)
   * TypeScript
-  * [dotenv](https://github.com/motdotla/dotenv): *environment variables*
+  * [dotenv](https://github.com/motdotla/dotenv) - *environment variables*
   * [bcryptjs](https://github.com/dcodeIO/bcrypt.js) (encryption)
   * [Express.js](https://expressjs.com/) (serving)
 - GraphQL (API)
