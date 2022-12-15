@@ -13,14 +13,14 @@ persisted in MongoDB.
 * [Unauthorized](#unauthorized)
   + [Mutations](#mutations)
     - [Register](#register)
-  + [Login](#login)
-  + [Forgot Password](#forgot-password)
-  + [Reset Password](#reset-password)
+    - [Login](#login)
+    - [Forgot Password](#forgot-password)
+    - [Reset Password](#reset-password)
 * [Authorized](#authorized)
-* [Mutations](#mutations-1)
-  + [Update Name](#update-name)
-* [Queries](#queries)
-  + [User](#user)
+  + [Mutations](#mutations-1)
+    - [Update Name](#update-name)
+  + [Queries](#queries)
+    - [User](#user)
 
 ## Languages/Frameworks
 - Node.js with TypeScript (server environment)
@@ -144,7 +144,7 @@ Responds with a JWT.
 }
 ```
 
-### Login
+#### Login
 Used to login with your credentials
 ```graphql
 mutation Login(
@@ -182,7 +182,7 @@ Responds with a JWT.
 }
 ```
 
-### Forgot Password
+#### Forgot Password
 Used to generate a reset password token (pre-requisite to resetting your password)
 ```graphql
 mutation ForgotPassword($username: String!){
@@ -206,7 +206,7 @@ Responds with the reset password token:
 }
 ```
 
-### Reset Password
+#### Reset Password
 Used to reset password (a token must be generated with `forgotPassword` first)
 ```graphql
 mutation ResetPassword(
@@ -240,8 +240,8 @@ Responds with a boolean indicating success:
 ## Authorized
 With all authorized queries and mutations, an `Authorization` header with the value of `Bearer <token>` must be set. 
 Otherwise, access will be denied.
-## Mutations 
-### Update Name
+### Mutations 
+#### Update Name
 Used to update your authenticated user's name in the database
 ```graphql
 mutation UpdateName(
@@ -288,8 +288,8 @@ Responds with a JWT.
 }
 ```
 
-## Queries
-### User
+### Queries
+#### User
 Gets your authenticated user
 ```graphql
 query User {
