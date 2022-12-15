@@ -23,15 +23,15 @@ persisted in MongoDB.
       * [User](#user)
 
 ## Tech Stack
-- Node.js (server environment)
+- [Node.js](https://nodejs.org/en/) (server environment)
   * [TypeScript](https://www.typescriptlang.org/) - *language*
   * [dotenv](https://github.com/motdotla/dotenv) - *environment variables*
   * [bcryptjs](https://github.com/dcodeIO/bcrypt.js) - *encryption*
   * [Express.js](https://expressjs.com/) - *serving*
-- GraphQL (API)
+- [GraphQL](https://graphql.org/) (API)
   * [Apollo Server](https://www.apollographql.com/docs/apollo-server/) - *serving*
   * [TypeGraphQL](https://typegraphql.com/docs/introduction.html) - *structure*
-- MongoDB (database)
+- [MongoDB](https://www.mongodb.com/home) (database)
   * [Typegoose](https://typegoose.github.io/typegoose/) - *structure*
   * [Mongoose](https://mongoosejs.com/) - *structure + connection*
 
