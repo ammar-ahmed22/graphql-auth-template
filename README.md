@@ -26,14 +26,14 @@ persisted in MongoDB.
 - Node.js (server environment)
   * TypeScript
   * [dotenv](https://github.com/motdotla/dotenv) - *environment variables*
-  * [bcryptjs](https://github.com/dcodeIO/bcrypt.js) (encryption)
-  * [Express.js](https://expressjs.com/) (serving)
+  * [bcryptjs](https://github.com/dcodeIO/bcrypt.js) - *encryption*
+  * [Express.js](https://expressjs.com/) - *serving*
 - GraphQL (API)
-  * [Apollo Server](https://www.apollographql.com/docs/apollo-server/) (serving)
-  * [TypeGraphQL](https://typegraphql.com/docs/introduction.html) (structure)
+  * [Apollo Server](https://www.apollographql.com/docs/apollo-server/) - *serving*
+  * [TypeGraphQL](https://typegraphql.com/docs/introduction.html) - *structure*
 - MongoDB (database)
-  * [Typegoose](https://typegoose.github.io/typegoose/) (structure)
-  * [Mongoose](https://mongoosejs.com/) (structure + connection)
+  * [Typegoose](https://typegoose.github.io/typegoose/) - *structure*
+  * [Mongoose](https://mongoosejs.com/) - *structure + connection*
 
 
 ## Environment Variables
