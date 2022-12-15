@@ -64,7 +64,7 @@ npm run dev # yarn dev
 API is now live at `http://localhost:8080/graphql`!
 
 ## API Reference
-### Mutations
+### Mutations (Unauthorized)
 #### Register
 Used to create a user in the database
 ```graphql
@@ -74,7 +74,7 @@ mutation Register(
   $firstName: String!, 
   $middleName: String
   $lastName: String!, 
-  ) {
+) {
   register(
     username: $username
     password: $password, 
@@ -115,7 +115,7 @@ Used to login with your credentials
 mutation Login(
   $password: String!, 
   $username: String!,
-  ) {
+) {
   login(
     username: $username
     password: $password, 
@@ -146,3 +146,61 @@ Responds with a JWT.
   }
 }
 ```
+
+### Forgot Password
+Used to generate a reset password token (pre-requisite to resetting your password)
+```graphql
+mutation ForgotPassword($username: String!){
+  forgotPassword(username: $username)
+}
+```
+
+Input your `username`:
+```json
+{
+  "username": "YOUR_USERNAME",
+}
+```
+
+Responds with the reset password token:
+```json
+{
+  "data": {
+    "forgotPassword": "<token>" 
+  }
+}
+```
+
+### Reset Password
+Used to reset password (a token must be generated with `forgotPassword` first)
+```graphql
+mutation ResetPassword(
+  $token: String!,
+  $newPassword: String!
+){
+  resetPassword(
+    token: $token,
+    newPassword: $newPassword
+  )
+}
+```
+
+Input your `token` and `newPassword`:
+```json
+{
+  "token": "<token>",
+  "newPassword": "YOUR_NEW_PASSWORD"
+}
+```
+
+Responds with a boolean indicating success:
+```json
+{
+  "data": {
+    "resetPassword": true 
+  }
+}
+```
+
+## Mutations (Authorized)
+
