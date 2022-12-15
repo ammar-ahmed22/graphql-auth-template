@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es2018", /* TypeGraphQL uses features from ES2018 */
+    "experimentalDecorators": true, /* Allows using experimental decorators (for TypeGraphQL) */
+    "emitDecoratorMetadata": true, /* Related to above */
+    "module": "commonjs", /* Specify what module code is generated. */
+    "rootDir": "./src", /* Root folder with all source files. */
+    "outDir": "./dist", /*  Output folder for all emitted files. */
+    "esModuleInterop": true,  
+    "forceConsistentCasingInFileNames": true, 
+    "skipLibCheck": true, /* Skip type checking all .d.ts files. */
+    "strictPropertyInitialization": false, /* Allows for creating class properties without initialization */
+  }
+}
