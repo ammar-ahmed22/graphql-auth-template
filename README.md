@@ -4,9 +4,26 @@ So, I created this starter template that I can modify for any future projects ea
 up with this GraphQL API for users to register, login, get user data, update user data and reset passwords. Users are 
 persisted in MongoDB.
 
+## Table of Contents
+* [Languages/Frameworks](#languages-frameworks)
+* [Environment Variables](#environment-variables)
+* [Run Locally](#run-locally)
+* [API Reference](#api-reference)
+* [Types](#types)
+* [Unauthorized](#unauthorized)
+  + [Mutations](#mutations)
+    - [Register](#register)
+  + [Login](#login)
+  + [Forgot Password](#forgot-password)
+  + [Reset Password](#reset-password)
+* [Authorized](#authorized)
+* [Mutations](#mutations-1)
+  + [Update Name](#update-name)
+* [Queries](#queries)
+  + [User](#user)
+
 ## Languages/Frameworks
-- Node.js (server environment)
-- TypeScript (language)
+- Node.js with TypeScript (server environment)
 - GraphQL (API language)
 - MongoDB (database)
 - Apollo Server (serving GraphQL API)
