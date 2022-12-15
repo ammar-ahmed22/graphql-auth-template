@@ -63,3 +63,51 @@ npm run dev # yarn dev
 
 API is now live at `http://localhost:8080/graphql`!
 
+## API Reference
+### Mutations
+### Register
+Used to create a user in the database
+```graphql
+mutation Register(
+  $password: String!, 
+  $username: String!,
+  $firstName: String!, 
+  $middleName: String
+  $lastName: String!, 
+  ) {
+  register(
+    username: $username
+    password: $password, 
+    firstName: $firstName,
+    middleName: $middleName 
+    lastName: $lastName, 
+  ){
+    token
+  }
+}
+```
+### Input
+Input your `username`, `password`, `firstName` and `lastName` (`middleName` is optional):
+```json
+{
+  "username": "YOUR_USERNAME",
+  "password": "YOUR_PASSWORD",
+  "firstName": "YOUR_FIRST_NAME",
+  "lastName": "YOUR_LAST_NAME",
+  "middleName": "YOUR_MIDDLE_NAME"
+}
+```
+
+### Response
+Responds with a JWT.
+```json
+{
+  "data": {
+    "register": {
+      "token": "<JWT>"
+    }
+  }
+}
+```
+
+
