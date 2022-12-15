@@ -25,15 +25,15 @@ persisted in MongoDB.
 ## Tech Stack
 - Node.js (server environment)
   * TypeScript
-  * dotenv (environment variables)
+  * [dotenv](https://github.com/motdotla/dotenv) (environment variables)
   * [bcryptjs](https://github.com/dcodeIO/bcrypt.js) (encryption)
-  * Express.js (serving)
+  * [Express.js](https://expressjs.com/) (serving)
 - GraphQL (API)
   * [Apollo Server](https://www.apollographql.com/docs/apollo-server/) (serving)
   * [TypeGraphQL](https://typegraphql.com/docs/introduction.html) (structure)
 - MongoDB (database)
   * [Typegoose](https://typegoose.github.io/typegoose/) (structure)
-  * Mongoose (structure + connection)
+  * [Mongoose](https://mongoosejs.com/) (structure + connection)
 
 
 ## Environment Variables
