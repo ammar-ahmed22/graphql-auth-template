@@ -9,18 +9,18 @@ persisted in MongoDB.
 * [Environment Variables](#environment-variables)
 * [Run Locally](#run-locally)
 * [API Reference](#api-reference)
-* [Types](#types)
-* [Unauthorized](#unauthorized)
-  + [Mutations](#mutations)
-    - [Register](#register)
-    - [Login](#login)
-    - [Forgot Password](#forgot-password)
-    - [Reset Password](#reset-password)
-* [Authorized](#authorized)
-  + [Mutations](#mutations-1)
-    - [Update Name](#update-name)
-  + [Queries](#queries)
-    - [User](#user)
+  + [Types](#types)
+  + [Unauthorized](#unauthorized)
+    - [Mutations](#mutations)
+      = [Register](#register)
+      = [Login](#login)
+      = [Forgot Password](#forgot-password)
+      = [Reset Password](#reset-password)
+  + [Authorized](#authorized)
+    - [Mutations](#mutations-1)
+      = [Update Name](#update-name)
+    - [Queries](#queries)
+      = [User](#user)
 
 ## Languages/Frameworks
 - Node.js with TypeScript (server environment)
@@ -81,7 +81,7 @@ npm run dev # yarn dev
 API is now live at `http://localhost:8080/graphql`!
 
 ## API Reference
-## Types
+### Types
 There are only two types of significance in this starter template; `User` and `AuthPayload`. `User` is self-explantory. `AuthPayload` is the JWT response sent with a number of mutations.
 ```graphql
 type User {
@@ -97,10 +97,10 @@ type AuthPayload {
   token: String! # JWT
 }
 ```
-## Unauthorized
+### Unauthorized
 These mutations can be called without any authentication required.
-### Mutations
-#### Register
+#### Mutations
+##### Register
 Used to create a user in the database
 ```graphql
 mutation Register(
@@ -144,7 +144,7 @@ Responds with a JWT.
 }
 ```
 
-#### Login
+##### Login
 Used to login with your credentials
 ```graphql
 mutation Login(
@@ -182,7 +182,7 @@ Responds with a JWT.
 }
 ```
 
-#### Forgot Password
+##### Forgot Password
 Used to generate a reset password token (pre-requisite to resetting your password)
 ```graphql
 mutation ForgotPassword($username: String!){
@@ -206,7 +206,7 @@ Responds with the reset password token:
 }
 ```
 
-#### Reset Password
+##### Reset Password
 Used to reset password (a token must be generated with `forgotPassword` first)
 ```graphql
 mutation ResetPassword(
@@ -237,11 +237,11 @@ Responds with a boolean indicating success:
 }
 ```
 
-## Authorized
+### Authorized
 With all authorized queries and mutations, an `Authorization` header with the value of `Bearer <token>` must be set. 
 Otherwise, access will be denied.
-### Mutations 
-#### Update Name
+#### Mutations 
+##### Update Name
 Used to update your authenticated user's name in the database
 ```graphql
 mutation UpdateName(
@@ -288,8 +288,8 @@ Responds with a JWT.
 }
 ```
 
-### Queries
-#### User
+#### Queries
+##### User
 Gets your authenticated user
 ```graphql
 query User {
