@@ -86,7 +86,7 @@ mutation Register(
   }
 }
 ```
-### Input
+
 Input your `username`, `password`, `firstName` and `lastName` (`middleName` is optional):
 ```json
 {
@@ -98,7 +98,6 @@ Input your `username`, `password`, `firstName` and `lastName` (`middleName` is o
 }
 ```
 
-### Response
 Responds with a JWT.
 ```json
 {
