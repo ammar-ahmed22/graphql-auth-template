@@ -24,10 +24,10 @@ persisted in MongoDB.
 
 ## Tech Stack
 - Node.js (server environment)
- * TypeScript
- * dotenv (environment variables)
- * [bcryptjs](https://github.com/dcodeIO/bcrypt.js) (encryption)
- * Express.js (serving)
+  * TypeScript
+  * dotenv (environment variables)
+  * [bcryptjs](https://github.com/dcodeIO/bcrypt.js) (encryption)
+  * Express.js (serving)
 - GraphQL (API)
   * [Apollo Server](https://www.apollographql.com/docs/apollo-server/) (serving)
   * [TypeGraphQL](https://typegraphql.com/docs/introduction.html) (structure)
