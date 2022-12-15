@@ -65,7 +65,7 @@ API is now live at `http://localhost:8080/graphql`!
 
 ## API Reference
 ### Mutations
-### Register
+#### Register
 Used to create a user in the database
 ```graphql
 mutation Register(
@@ -109,4 +109,40 @@ Responds with a JWT.
 }
 ```
 
+### Login
+Used to login with your credentials
+```graphql
+mutation Login(
+  $password: String!, 
+  $username: String!,
+  ) {
+  login(
+    username: $username
+    password: $password, 
+  ){
+    token
+  }
+}
+```
 
+Input your `username` and `password`:
+```json
+{
+  "username": "YOUR_USERNAME",
+  "password": "YOUR_PASSWORD",
+  "firstName": "YOUR_FIRST_NAME",
+  "lastName": "YOUR_LAST_NAME",
+  "middleName": "YOUR_MIDDLE_NAME"
+}
+```
+
+Responds with a JWT.
+```json
+{
+  "data": {
+    "login": {
+      "token": "<JWT>"
+    }
+  }
+}
+```
