@@ -306,7 +306,7 @@ Responds with user.
       "lastName": "YOUR_LAST_NAME",
       "middleName": "YOUR_MIDDLE_NAME",
       "_id": "MONGO_DB_ID",
-      "createdAt": 0 /* Timestamp when user was created */
+      "createdAt": 0
     }
   }
 }
