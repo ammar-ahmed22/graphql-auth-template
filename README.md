@@ -22,17 +22,18 @@ persisted in MongoDB.
     - [Queries](#queries)
       * [User](#user)
 
-## Languages/Frameworks
-- Node.js with TypeScript (server environment)
-- GraphQL (API language)
+## Tech Stack
+- Node.js (server environment)
+ * TypeScript
+ * dotenv (environment variables)
+ * [bcryptjs](https://github.com/dcodeIO/bcrypt.js) (encryption)
+ * Express.js (serving)
+- GraphQL (API)
+  * [Apollo Server](https://www.apollographql.com/docs/apollo-server/) (serving)
+  * [TypeGraphQL](https://typegraphql.com/docs/introduction.html) (structure)
 - MongoDB (database)
-- Apollo Server (serving GraphQL API)
-- Express (serving GraphQL API)
-- TypeGraphQL (structuring GraphQL with types)
-- Typegoose (structuring MongoDB documents with types)
-- Mongoose (connecting to MongoDB)
-- dotenv (environment variables)
-- brcryptjs (encryption)
+  * [Typegoose](https://typegoose.github.io/typegoose/) (structure)
+  * Mongoose (structure + connection)
 
 
 ## Environment Variables
